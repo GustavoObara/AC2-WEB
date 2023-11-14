@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-3">
+        <label class="form-label">AC1</label><input [(ngModel)]="ac1" type="number" type="text" class="form-control">
+    </div>
+    <div class="col-sm-3">
+        <label class="form-label">AC2</label><input [(ngModel)]="ac2" type="number" type="text" class="form-control">
+    </div>
+    <div class="col-sm-3">
+        <label class="form-label">AG</label><input [(ngModel)]="ag" type="number" type="text" class="form-control">
+    </div>
+    <div class="col-sm-3">
+        <label class="form-label">AF</label><input [(ngModel)]="af" type="number" type="text" class="form-control">
+    </div>
+
+    <div class="col-sm-3">
+        <div style="margin-top: 30px;">
+            <button class="btn btn-primary" (click)="calcular()">Calcular</button>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div class="">
+            <label class="form-label">Resultado</label>
+            <input [(ngModel)]="resultado" type="number" class="form-control">
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="row">
+    <form [formGroup]="formApolice" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="mb-3 col-sm-3">
+                <label class="form-label">Nome</label>
+                <input class="form-control" formControlName="nome" type="text" placeholder="Adicione um nome...">
+            </div>
+            <div class="mb-3 col-sm-3">
+                <label class="form-label">Sexo</label>
+                <select formControlName="sexo" class="form-control">
+                    <option value="" disabled>Escolha uma opção</option>
+                    <option *ngFor="let tipo of tipos" [value]="tipo.value">{{tipo.name}}</option>
+                </select>
+            </div>
+            <div class="mb-3 col-sm-3">
+                <label class="form-label">Idade</label>
+                <input class="form-control" formControlName="idade" type="number" placeholder="Adicione a idade..."
+                    [(ngModel)]="menorIdade">
+                <div *ngIf="menorIdade < 18">
+                    <p class="text-danger"><b>IDADE PRECISA SER MAIOR QUE 18 ANOS</b></p>
+                </div>
+            </div>
+            <div class="mb-3 col-sm-3">
+                <label class="form-label">Valor do automóvel</label>
+                <input class="form-control" formControlName="valorCarro" type="text" placeholder="Valor do veículo...">
+            </div>
+        </div>
+        <button (click)="onSubmit()" class="btn btn-primary">Calcular Apólice</button>
+    </form>
+</div>
